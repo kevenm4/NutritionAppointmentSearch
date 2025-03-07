@@ -4,10 +4,7 @@ import Domain
 
 public struct ListOfProfessionalsView: View {
 
-    @State private var selectedOption: SortBy = .bestMatch
     @StateObject private var viewModel: ListOfProfessionalsViewModel
-
-    let sortOptions: [SortBy] = [.bestMatch, .rating, .mostPopular]
 
     public init(repository: ProfessionalRepositoryProtocol) {
         _viewModel = StateObject(wrappedValue: ListOfProfessionalsViewModel(repository: repository))
@@ -18,13 +15,13 @@ public struct ListOfProfessionalsView: View {
             ScrollView {
                 DropdownPicker(
                     title: "Sort by",
-                    options: sortOptions,
-                    selection: $selectedOption
+                    options: viewModel.sortOptions,
+                    selection: $viewModel.selectedOption
                 )
                 .padding(.horizontal, 20)
                 .padding(.top, 16)
-                .onChange(of: selectedOption) {
-                    viewModel.fetchListOfProfessionals(sortBy: selectedOption)
+                .onChange(of: viewModel.selectedOption) {
+                    viewModel.fetchListOfProfessionals(sortBy: viewModel.selectedOption, forceReload: false)
                 }
 
                 VStack(spacing: 16) {
@@ -43,7 +40,10 @@ public struct ListOfProfessionalsView: View {
             .scrollIndicators(.hidden)
         }
         .onAppear {
-            viewModel.fetchListOfProfessionals(sortBy: selectedOption)
+            viewModel.fetchListOfProfessionals(sortBy: viewModel.selectedOption, forceReload: false)
+        }
+        .refreshable {
+            viewModel.fetchListOfProfessionals(sortBy: viewModel.selectedOption, forceReload: true)
         }
     }
 }

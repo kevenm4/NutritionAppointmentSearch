@@ -4,21 +4,21 @@ import Domain
 
 @Model
 public final class CachedProfessional {
-    @Attribute(.unique) public var id: Int
-       public var name: String
-       public var specialty: [String]
-       public var languages: [String]
-       public var aboutMe: String
-       public var rating: Int
-       public var popularity: Int
-       public var lastUpdated: Date
+    @Attribute(.unique) public var id: String
+    public var name: String
+    public var specialty: [String]
+    public var languages: [String]
+    public var aboutMe: String?
+    public var rating: Int
+    public var popularity: Int
+    public var lastUpdated: Date
 
     public init(
-        id: Int,
+        id: String,
         name: String,
         specialty: [String],
         languages: [String],
-        aboutMe: String,
+        aboutMe: String?,
         rating: Int,
         popularity: Int,
         lastUpdated: Date
@@ -33,31 +33,29 @@ public final class CachedProfessional {
         self.lastUpdated = lastUpdated
     }
 
-    /// Converte um `Professional` para `CachedProfessional`
     static func fromProfessional(_ professional: Professional) -> CachedProfessional {
         return CachedProfessional(
-            id: professional.id,
+            id: "\(professional.id)", // Garante que é string
             name: professional.name,
             specialty: professional.expertise,
             languages: professional.languages,
-            aboutMe: professional.aboutMe ?? "",
+            aboutMe: professional.aboutMe,
             rating: professional.rating,
             popularity: professional.ratingCount,
             lastUpdated: Date()
         )
     }
 
-    /// Converte `CachedProfessional` de volta para `Professional`
     public func toProfessional() -> Professional {
         return Professional(
-            id: id,
+            id: Int(id) ?? 0, // Converte de volta para Int
             name: name,
             rating: rating,
             ratingCount: popularity,
             languages: languages,
             expertise: specialty,
             profileImage: String(),
-            aboutMe: aboutMe
+            aboutMe: aboutMe ?? nil
         )
     }
 }

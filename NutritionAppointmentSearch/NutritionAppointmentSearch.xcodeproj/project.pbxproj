@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C794B412D778FBF0044CB50 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794B402D778FBF0044CB50 /* Presentation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		4C794B422D778FBF0044CB50 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794B402D778FBF0044CB50 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C794C292D77A8650044CB50 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C282D77A8650044CB50 /* Domain.framework */; };
-		4C794C2A2D77A8650044CB50 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C282D77A8650044CB50 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C794C322D77AA0C0044CB50 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C312D77AA0C0044CB50 /* DataLayer.framework */; };
-		4C794C332D77AA0C0044CB50 /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C312D77AA0C0044CB50 /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CCB88A02D7B4E2000DC6205 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCB889F2D7B4E2000DC6205 /* Presentation.framework */; };
+		4CCB88A22D7B4E5100DC6205 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCB88A12D7B4E5100DC6205 /* DataLayer.framework */; };
+		4CCB88A42D7B4E5900DC6205 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCB88A32D7B4E5900DC6205 /* Domain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,9 +19,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4C794C2A2D77A8650044CB50 /* Domain.framework in Embed Frameworks */,
-				4C794B422D778FBF0044CB50 /* Presentation.framework in Embed Frameworks */,
-				4C794C332D77AA0C0044CB50 /* DataLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,9 +27,9 @@
 
 /* Begin PBXFileReference section */
 		4C794B192D778E080044CB50 /* NutritionAppointmentSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutritionAppointmentSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C794B402D778FBF0044CB50 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C794C282D77A8650044CB50 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C794C312D77AA0C0044CB50 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCB889F2D7B4E2000DC6205 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCB88A12D7B4E5100DC6205 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCB88A32D7B4E5900DC6205 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -51,9 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C794C292D77A8650044CB50 /* Domain.framework in Frameworks */,
-				4C794B412D778FBF0044CB50 /* Presentation.framework in Frameworks */,
-				4C794C322D77AA0C0044CB50 /* DataLayer.framework in Frameworks */,
+				4CCB88A42D7B4E5900DC6205 /* Domain.framework in Frameworks */,
+				4CCB88A22D7B4E5100DC6205 /* DataLayer.framework in Frameworks */,
+				4CCB88A02D7B4E2000DC6205 /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				4C794B1B2D778E080044CB50 /* NutritionAppointmentSearch */,
-				4C794B3F2D778FBF0044CB50 /* Frameworks */,
+				4CCB889E2D7B4E2000DC6205 /* Frameworks */,
 				4C794B1A2D778E080044CB50 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,12 +71,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C794B3F2D778FBF0044CB50 /* Frameworks */ = {
+		4CCB889E2D7B4E2000DC6205 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C794C312D77AA0C0044CB50 /* DataLayer.framework */,
-				4C794C282D77A8650044CB50 /* Domain.framework */,
-				4C794B402D778FBF0044CB50 /* Presentation.framework */,
+				4CCB88A32D7B4E5900DC6205 /* Domain.framework */,
+				4CCB88A12D7B4E5100DC6205 /* DataLayer.framework */,
+				4CCB889F2D7B4E2000DC6205 /* Presentation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,6 +291,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NutritionAppointmentSearch/Preview Content\"";
 				DEVELOPMENT_TEAM = 5R73GFLK54;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)\n";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,6 +326,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NutritionAppointmentSearch/Preview Content\"";
 				DEVELOPMENT_TEAM = 5R73GFLK54;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)\n";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
