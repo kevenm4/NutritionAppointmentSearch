@@ -28,10 +28,13 @@ final class AppContainer {
         self.apiClient = APIClient()
         self.professionalService = ProfessionalService(apiClient: apiClient)
 
-        // Inicializa SwiftData corretamente no MainActor
-        let modelContainer = try! ModelContainer(for: CachedProfessional.self, CachedSearch.self)
+        do {
+            let modelContainer = try ModelContainer(for: CachedProfessional.self, CachedSearch.self)
+            self.professionalCache = ProfessionalCache(modelContainer: modelContainer)
+        } catch {
+            fatalError("Erro ao carregar o ModelContainer: \(error)")
+        }
 
-        self.professionalCache = ProfessionalCache(modelContainer: modelContainer) // ← Agora passamos `modelContainer`
         self.professionalRepository = ProfessionalManager(service: professionalService, cache: professionalCache)
     }
 }

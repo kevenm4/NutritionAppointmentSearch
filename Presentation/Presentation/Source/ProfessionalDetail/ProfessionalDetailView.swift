@@ -17,7 +17,9 @@ public struct ProfessionalDetailView: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HeaderView(professional: viewModel.professional)
-            AboutMeView(aboutMe: viewModel.professional.aboutMe ?? "", isExpanded: $isExpanded)
+            if let aboutMe = viewModel.professional.aboutMe {
+                AboutMeView(aboutMe: aboutMe, isExpanded: $isExpanded)
+            }
             Spacer()
         }
         .padding()

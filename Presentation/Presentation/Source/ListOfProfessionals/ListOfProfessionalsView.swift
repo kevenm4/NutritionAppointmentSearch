@@ -24,7 +24,7 @@ public struct ListOfProfessionalsView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 16)
                 .onChange(of: selectedOption) {
-                    viewModel.fetchListOfProfessionals(sortBy: selectedOption)
+                    viewModel.fetchListOfProfessionals(sortBy: selectedOption, forceReload: false)
                 }
 
                 VStack(spacing: 16) {
@@ -43,7 +43,10 @@ public struct ListOfProfessionalsView: View {
             .scrollIndicators(.hidden)
         }
         .onAppear {
-            viewModel.fetchListOfProfessionals(sortBy: selectedOption)
+            viewModel.fetchListOfProfessionals(sortBy: selectedOption, forceReload: false)
+        }
+        .refreshable {
+            viewModel.fetchListOfProfessionals(sortBy: selectedOption, forceReload: true)
         }
     }
 }
