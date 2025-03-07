@@ -10,7 +10,7 @@ class ListOfProfessionalsViewModel: ObservableObject {
 
     var sortOptions: [SortBy] = [.bestMatch, .rating, .mostPopular]
     var repository: ProfessionalRepositoryProtocol
-    var limit = 8
+    var limit = 10
 
     init(repository: ProfessionalRepositoryProtocol) {
         self.repository = repository

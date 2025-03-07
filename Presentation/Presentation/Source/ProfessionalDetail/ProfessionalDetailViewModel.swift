@@ -19,7 +19,6 @@ class ProfessionalDetailViewModel: ObservableObject {
             do {
                 let fetchedProfessional = try await repository.getProfessional(by: professional.id)
                 professional = fetchedProfessional
-                print("\(fetchedProfessional)")
             } catch {
                 print("Erro ao buscar profissional: \(error)")
             }
