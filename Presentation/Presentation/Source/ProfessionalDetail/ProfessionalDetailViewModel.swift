@@ -5,6 +5,7 @@ import Domain
 @MainActor
 class ProfessionalDetailViewModel: ObservableObject {
     @Published var professional: Professional
+    @Published var isExpanded = false
     
     private let repository: ProfessionalRepositoryProtocol
 
@@ -18,7 +19,6 @@ class ProfessionalDetailViewModel: ObservableObject {
             do {
                 let fetchedProfessional = try await repository.getProfessional(by: professional.id)
                 professional = fetchedProfessional
-                print("\(fetchedProfessional)")
             } catch {
                 print("Erro ao buscar profissional: \(error)")
             }

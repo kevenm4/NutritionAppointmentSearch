@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C794C262D77A7DF0044CB50 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C252D77A7DF0044CB50 /* Domain.framework */; };
-		4C794C272D77A7DF0044CB50 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C252D77A7DF0044CB50 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C794C2F2D77A9B70044CB50 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C2E2D77A9B70044CB50 /* DataLayer.framework */; };
-		4C794C302D77A9B70044CB50 /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C2E2D77A9B70044CB50 /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CCB88A72D7B4E7300DC6205 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCB88A62D7B4E7300DC6205 /* DataLayer.framework */; };
+		4CCB88A92D7B4E7700DC6205 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCB88A82D7B4E7700DC6205 /* Domain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,8 +18,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4C794C302D77A9B70044CB50 /* DataLayer.framework in Embed Frameworks */,
-				4C794C272D77A7DF0044CB50 /* Domain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,8 +26,8 @@
 
 /* Begin PBXFileReference section */
 		4C794B342D778E4D0044CB50 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C794C252D77A7DF0044CB50 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C794C2E2D77A9B70044CB50 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCB88A62D7B4E7300DC6205 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCB88A82D7B4E7700DC6205 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,8 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C794C2F2D77A9B70044CB50 /* DataLayer.framework in Frameworks */,
-				4C794C262D77A7DF0044CB50 /* Domain.framework in Frameworks */,
+				4CCB88A92D7B4E7700DC6205 /* Domain.framework in Frameworks */,
+				4CCB88A72D7B4E7300DC6205 /* DataLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				4C794B362D778E4D0044CB50 /* Presentation */,
-				4C794C202D77A7DB0044CB50 /* Frameworks */,
+				4CCB88A52D7B4E7300DC6205 /* Frameworks */,
 				4C794B352D778E4D0044CB50 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,11 +68,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C794C202D77A7DB0044CB50 /* Frameworks */ = {
+		4CCB88A52D7B4E7300DC6205 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C794C2E2D77A9B70044CB50 /* DataLayer.framework */,
-				4C794C252D77A7DF0044CB50 /* Domain.framework */,
+				4CCB88A82D7B4E7700DC6205 /* Domain.framework */,
+				4CCB88A62D7B4E7300DC6205 /* DataLayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,6 +182,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)\n";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -199,7 +196,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = kvn.Presentation;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Presentation;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -226,6 +223,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)\n";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -239,7 +237,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = kvn.Presentation;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Presentation;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

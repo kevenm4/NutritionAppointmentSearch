@@ -16,7 +16,7 @@ public class ProfessionalService: ProfessionalRepositoryProtocol {
     }
 
     /// Busca profissionais com filtros
-    public func searchProfessionals(limit: Int, offset: Int, sortBy: SortBy = .bestMatch) async throws -> Search {
+    public func searchProfessionals(limit: Int, offset: Int, sortBy: SortBy = .bestMatch, forceReload: Bool) async throws -> Search {
         var components = URLComponents(string: "https://nutrisearch.vercel.app/professionals/search")!
         components.queryItems = [
             URLQueryItem(name: "limit", value: "\(limit)"),

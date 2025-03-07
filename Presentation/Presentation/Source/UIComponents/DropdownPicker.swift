@@ -53,8 +53,6 @@ struct DropdownPicker<T: Hashable & Identifiable & CustomStringConvertible>: Vie
     }
 }
 
-
-// TODO: - A ter em conta como essa struct funciona
 struct ViewOffsetKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {

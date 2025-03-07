@@ -11,9 +11,9 @@ public actor ProfessionalCache {
 
     /// Busca um profissional no cache com verificação de expiração
     @MainActor
-    func getProfessional(by id: Int, expirationInterval: TimeInterval) -> Professional? {
+    func getProfessional(by id: String, expirationInterval: TimeInterval) -> Professional? {
         let modelContext = modelContainer.mainContext
-        let fetchDescriptor = FetchDescriptor<CachedProfessional>(predicate: #Predicate { $0.id == id })
+        let fetchDescriptor = FetchDescriptor<CachedProfessional>(predicate: #Predicate { $0.id == id }) // ← id agora é String
         guard let cachedProfessional = try? modelContext.fetch(fetchDescriptor).first else { return nil }
 
         if Date().timeIntervalSince(cachedProfessional.lastUpdated) > expirationInterval {

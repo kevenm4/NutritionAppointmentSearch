@@ -12,7 +12,7 @@ public class ProfessionalManager: ProfessionalRepositoryProtocol { // ← Garant
     }
 
     public func getProfessional(by id: Int) async throws -> Professional {
-        if let cachedProfessional = await cache.getProfessional(by: id, expirationInterval: expirationInterval) {
+        if let cachedProfessional = await  cache.getProfessional(by: "\(id)", expirationInterval: expirationInterval) {
             return cachedProfessional
         }
 
@@ -21,18 +21,19 @@ public class ProfessionalManager: ProfessionalRepositoryProtocol { // ← Garant
         return professional
     }
 
-    public func searchProfessionals(limit: Int, offset: Int, sortBy: SortBy) async throws -> Search {
-        if let cachedSearch = await cache.getSearch(limit: limit, offset: offset, expirationInterval: expirationInterval) {
+    public func searchProfessionals(limit: Int, offset: Int, sortBy: SortBy, forceReload: Bool = false) async throws -> Search {
+        if !forceReload, let cachedSearch = await cache.getSearch(limit: limit, offset: offset, expirationInterval: expirationInterval) {
             print("from cache")
-            return Search(professionals: sortProfessionals(cachedSearch.professionals, by: sortBy)) // Agora passamos apenas o array de profissionais
+            return Search(professionals: sortProfessionals(cachedSearch.professionals, by: sortBy))
         }
 
-        let searchResults = try await service.searchProfessionals(limit: limit, offset: offset, sortBy: .bestMatch)
+        let searchResults = try await service.searchProfessionals(limit: limit, offset: offset, sortBy: .bestMatch, forceReload: forceReload)
         print("from service")
         await cache.saveSearch(searchResults, limit: limit, offset: offset)
 
-        return Search(professionals: sortProfessionals(searchResults.professionals, by: sortBy)) // Passamos apenas o array correto
+        return Search(professionals: sortProfessionals(searchResults.professionals, by: sortBy))
     }
+
 
     private func sortProfessionals(_ professionals: [Professional], by sortBy: SortBy) -> [Professional] {
         switch sortBy {
