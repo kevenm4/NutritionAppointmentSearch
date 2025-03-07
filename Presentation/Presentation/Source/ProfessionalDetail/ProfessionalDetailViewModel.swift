@@ -5,6 +5,7 @@ import Domain
 @MainActor
 class ProfessionalDetailViewModel: ObservableObject {
     @Published var professional: Professional
+    @Published var isExpanded = false
     
     private let repository: ProfessionalRepositoryProtocol
 
