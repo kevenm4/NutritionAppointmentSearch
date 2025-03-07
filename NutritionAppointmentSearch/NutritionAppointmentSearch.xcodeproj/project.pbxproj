@@ -14,7 +14,6 @@
 		4C794C322D77AA0C0044CB50 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C312D77AA0C0044CB50 /* DataLayer.framework */; };
 		4C794C332D77AA0C0044CB50 /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C312D77AA0C0044CB50 /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C795C042D7A7E980044CB50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C795C032D7A7E980044CB50 /* GoogleService-Info.plist */; };
-		4C795C072D7A84520044CB50 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4C795C062D7A84520044CB50 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,7 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C794C292D77A8650044CB50 /* Domain.framework in Frameworks */,
-				4C795C072D7A84520044CB50 /* FirebaseFirestore in Frameworks */,
 				4C794B412D778FBF0044CB50 /* Presentation.framework in Frameworks */,
 				4C794C322D77AA0C0044CB50 /* DataLayer.framework in Frameworks */,
 			);
@@ -113,7 +111,6 @@
 			);
 			name = NutritionAppointmentSearch;
 			packageProductDependencies = (
-				4C795C062D7A84520044CB50 /* FirebaseFirestore */,
 			);
 			productName = NutritionAppointmentSearch;
 			productReference = 4C794B192D778E080044CB50 /* NutritionAppointmentSearch.app */;
@@ -143,9 +140,6 @@
 			);
 			mainGroup = 4C794B102D778E080044CB50;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				4C795C052D7A84520044CB50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4C794B1A2D778E080044CB50 /* Products */;
 			projectDirPath = "";
@@ -387,25 +381,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4C795C052D7A84520044CB50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.9.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4C795C062D7A84520044CB50 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4C795C052D7A84520044CB50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C794B112D778E080044CB50 /* Project object */;
 }
