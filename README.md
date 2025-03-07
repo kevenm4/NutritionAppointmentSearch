@@ -78,7 +78,7 @@ O **NutritionAppointmentApp** permite que os usuários encontrem profissionais d
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/nutrition-appointment-app.git
+   git@github.com:kevenm4/NutritionAppointmentSearch.git
    ```
 2. Abra o projeto no Xcode.
 3. Execute o projeto em um simulador ou dispositivo.
@@ -88,6 +88,6 @@ O **NutritionAppointmentApp** permite que os usuários encontrem profissionais d
 
 ## 📬 Contato
 
-- ✉️ Email: [seu-email@example.com](mailto:seu-email@example.com)
-- 💼 LinkedIn: [Seu Nome](https://www.linkedin.com/in/seu-perfil/)
+- ✉️ Email: [kevenesmael8@gmail.com](mailto:kevenesmael8l@gmail.com)
+- 💼 LinkedIn: [Keven Esmael](https://www.linkedin.com/in/keven-vieira-andrade/)
 
