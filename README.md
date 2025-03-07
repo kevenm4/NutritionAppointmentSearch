@@ -60,17 +60,9 @@ O **NutritionAppointmentApp** permite que os usuários encontrem profissionais d
 
 ## 📸 Evidências
 
-### 📷 Imagens
-
-| Tela | Descrição |
-|------|----------|
-| ![Imagem 1](link-da-imagem) | Tela inicial com lista de profissionais |
-| ![Imagem 2](link-da-imagem) | Tela de detalhes de um profissional |
-| ![Imagem 3](link-da-imagem) | Dropdown de ordenação |
-
-### 🎥 Vídeos
-
-- 📹 [Demonstração do projeto](link-do-video)
+| App With Service | App With Mock|
+| --- | --- |
+| <video src="https://github.com/user-attachments/assets/25e455c7-6190-4674-bddb-ef4d91b3b9f7" width="300"> | <video src="https://github.com/user-attachments/assets/34a4c752-3f21-48e9-84c1-cdf6656c9ca9" width="300"> |
 
 ---
 
