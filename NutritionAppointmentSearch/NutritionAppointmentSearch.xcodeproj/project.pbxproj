@@ -13,7 +13,6 @@
 		4C794C2A2D77A8650044CB50 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C282D77A8650044CB50 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C794C322D77AA0C0044CB50 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C312D77AA0C0044CB50 /* DataLayer.framework */; };
 		4C794C332D77AA0C0044CB50 /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C794C312D77AA0C0044CB50 /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C795C042D7A7E980044CB50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C795C032D7A7E980044CB50 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,7 +36,6 @@
 		4C794B402D778FBF0044CB50 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C794C282D77A8650044CB50 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C794C312D77AA0C0044CB50 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C795C032D7A7E980044CB50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -65,7 +63,6 @@
 		4C794B102D778E080044CB50 = {
 			isa = PBXGroup;
 			children = (
-				4C795C032D7A7E980044CB50 /* GoogleService-Info.plist */,
 				4C794B1B2D778E080044CB50 /* NutritionAppointmentSearch */,
 				4C794B3F2D778FBF0044CB50 /* Frameworks */,
 				4C794B1A2D778E080044CB50 /* Products */,
@@ -155,7 +152,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C795C042D7A7E980044CB50 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
