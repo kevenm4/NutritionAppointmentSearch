@@ -1,14 +1,14 @@
 import Foundation
 import Domain
 
-public class ProfessionalManager: ProfessionalRepositoryProtocol { // ← Garante que conforma com o protocolo
+public class ProfessionalManager: ProfessionalRepositoryProtocol {
     private let service: ProfessionalService
     private let cache: ProfessionalCache
     private let expirationInterval: TimeInterval = 3600 // 1 hora
 
-    public init(service: ProfessionalService, cache: ProfessionalCache) {
+    public init(service: ProfessionalService) {
         self.service = service
-        self.cache = cache
+        self.cache = ProfessionalCache()
     }
 
     public func getProfessional(by id: Int) async throws -> Professional {
@@ -24,14 +24,14 @@ public class ProfessionalManager: ProfessionalRepositoryProtocol { // ← Garant
     public func searchProfessionals(limit: Int, offset: Int, sortBy: SortBy) async throws -> Search {
         if let cachedSearch = await cache.getSearch(limit: limit, offset: offset, expirationInterval: expirationInterval) {
             print("from cache")
-            return Search(professionals: sortProfessionals(cachedSearch.professionals, by: sortBy)) // Agora passamos apenas o array de profissionais
+            return Search(professionals: sortProfessionals(cachedSearch.professionals, by: sortBy))
         }
 
         let searchResults = try await service.searchProfessionals(limit: limit, offset: offset, sortBy: .bestMatch)
         print("from service")
         await cache.saveSearch(searchResults, limit: limit, offset: offset)
 
-        return Search(professionals: sortProfessionals(searchResults.professionals, by: sortBy)) // Passamos apenas o array correto
+        return Search(professionals: sortProfessionals(searchResults.professionals, by: sortBy))
     }
 
     private func sortProfessionals(_ professionals: [Professional], by sortBy: SortBy) -> [Professional] {

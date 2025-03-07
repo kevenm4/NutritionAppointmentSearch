@@ -1,5 +1,5 @@
 import SwiftUI
-import SwiftData
+import FirebaseFirestore
 import Presentation
 import DataLayer
 import Core
@@ -28,10 +28,10 @@ final class AppContainer {
         self.apiClient = APIClient()
         self.professionalService = ProfessionalService(apiClient: apiClient)
 
-        // Inicializa SwiftData corretamente no MainActor
-        let modelContainer = try! ModelContainer(for: CachedProfessional.self, CachedSearch.self)
+        // Injeção de dependência: agora passamos o Firestore
+        let firestore = Firestore.firestore()
+        self.professionalCache = ProfessionalCache()
 
-        self.professionalCache = ProfessionalCache(modelContainer: modelContainer) // ← Agora passamos `modelContainer`
-        self.professionalRepository = ProfessionalManager(service: professionalService, cache: professionalCache)
+        self.professionalRepository = ProfessionalManager(service: professionalService)
     }
 }
